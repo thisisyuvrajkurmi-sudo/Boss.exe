@@ -28,9 +28,9 @@ function startRound() {
   $('#caption').classList.remove('on');
   updateHud();
   const boss = $('#boss');
-  boss.className = 'boss b-walk';
+  boss.setAttribute('class', 'boss b-walk');
   caption('Here comes the boss\u2026');
-  later(1800, () => { boss.className = 'boss'; st.busy = false; caption(''); scheduleNag(); });
+  later(1800, () => { boss.setAttribute('class', 'boss'); st.busy = false; caption(''); scheduleNag(); });
 }
 
 function updateHud() { $('#chaos').textContent = st.chaos; $('#warn').textContent = st.warn; }
@@ -76,13 +76,13 @@ function run(id) {
   }
   $('#player').classList.add('p-flinch');
   later(a.at, () => {
-    boss.className = 'boss ' + a.anim + ' ' + a.face;
+    boss.setAttribute('class', 'boss ' + a.anim + ' ' + a.face);
     audio.play(a.snd); shake(); burst(a); caption(a.text);
   });
   later(a.dur, () => {
     if (el) el.classList.remove('fx');
     $('#player').classList.remove('p-flinch');
-    boss.className = 'boss';
+    boss.setAttribute('class', 'boss');
     if (a.type === 'chaos') st.chaos++; else st.warn++;
     updateHud();
     if (st.chaos >= 8) return end('chaos');
