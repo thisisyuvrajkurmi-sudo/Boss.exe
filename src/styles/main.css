@@ -7,11 +7,12 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font-family:"Trebuchet
 .title{font-size:clamp(40px,11vw,96px);line-height:.95;margin:0;letter-spacing:4px;font-weight:900;text-shadow:0 4px 0 #333;animation:bob 3s ease-in-out infinite}
 .title span{-webkit-text-stroke:2px #fff;color:transparent}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-1deg)}}
-.sub{color:#999;margin:0 0 14px}
+.sub{color:#999;margin:0 0 14px;position:relative;z-index:1}
+.screen .btn,.screen .title{position:relative;z-index:1}
 .btn{min-width:200px;padding:14px 26px;font:inherit;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:#000;border:2px solid #777;border-radius:6px;cursor:pointer;transition:.15s}
 .btn:hover,.btn:focus-visible{background:#fff;color:#000;transform:translateY(-2px);box-shadow:0 6px 0 #444;outline:0}
 .btn.big{font-size:1.25rem;border-color:#fff}
-.paper-rain{position:absolute;inset:0;overflow:hidden;opacity:.25;background:repeating-linear-gradient(90deg,transparent 0 60px,#fff1 60px 61px);animation:drift 20s linear infinite}
+.paper-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;opacity:.25;background:repeating-linear-gradient(90deg,transparent 0 60px,#fff1 60px 61px);animation:drift 20s linear infinite}
 @keyframes drift{to{background-position:0 600px}}
 #game{padding:0;gap:0;justify-content:flex-start;background:#000}
 .hud{width:100%;display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;font-size:.85rem;letter-spacing:2px}
