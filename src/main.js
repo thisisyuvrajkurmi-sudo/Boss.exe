@@ -126,7 +126,7 @@ document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-go]');
   audio.startAmbience();
   if (!b) return;
-  if (b.dataset.go === 'play') { st.running = false; }
+  if (b.dataset.go === 'game') { st.running = false; }
   show(b.dataset.go);
 });
 $('#replayBtn').addEventListener('click', () => { st.running = false; show('game'); });
